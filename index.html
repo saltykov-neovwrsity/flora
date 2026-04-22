@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
 
   <link rel="stylesheet" href="./styles/styles.css">
-  <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
     <div class="container">
       <a href="./index.html" class="header-logo-link animate__animated animate__pulse">
         <svg width="84" height="36">
-          <use href="./icons/Logo.svg"></use>
+          <use href="./images/icons.svg#Logo"></use>
         </svg>
       </a>
 
@@ -43,10 +43,8 @@
       <button type="button" class="primary-button header-button">Explore Bouquets</button>
 
       <button type="button" class="menu-button" aria-expanded="false" data-menu-button>
-        <svg class="menu-icon" viewBox="0 0 24 24">
-          <path class="menu-icon__burger" d="M3 12H21M3 6H21M3 18H21" stroke-linecap="round" stroke-linejoin="round" />
-          <path class="menu-icon__close" d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
+        <svg class="menu-icon menu-icon__burger" width="24" height="24"><use href="./images/icons.svg#menu"></use></svg>
+        <svg class="menu-icon menu-icon__close" width="24" height="24"><use href="./images/icons.svg#close_x"></use></svg>
       </button>
     </div>
   </header>
@@ -62,7 +60,7 @@
         </div>
         <div class="hero-image-wrapper">
           <img src="./images/hero@X1.jpg" srcset="./images/hero@X2.jpg 2x"
-            alt="Brighten Your Day with Our Stunning Bouquets" class="hero-image">
+            alt="Brighten Your Day with Our Stunning Bouquets" class="hero-image" width="1440" height="669">
         </div>
       </div>
     </section>
@@ -71,7 +69,7 @@
       <div class="container about-block">
         <div class="about-content-left">
           <svg width="96" height="85">
-            <use href="./icons/flower.svg"></use>
+            <use href="./images/icons.svg#flower"></use>
           </svg>
           <div class="about-description">
             <h2 class="section-title">Our Passion for Floral Artistry</h2>
@@ -82,7 +80,7 @@
         </div>
         <div class="about-image">
           <img src="./images/about@X1.jpg" srcset="./images/about@X2.jpg 2x" alt="Florist creating a bouquet"
-            class="about-image-img">
+            class="about-image-img" width="600" height="428">
         </div>
       </div>
     </section>
@@ -94,7 +92,7 @@
           <ul class="bestsellers-list">
             <li class="bestsellers-item">
               <img src="./images/top-bouquet-1@X1.jpg" srcset="./images/top-bouquet-1@X2.jpg 2x" alt="Spring Elegance"
-                class="bestsellers-img">
+                class="bestsellers-img" width="400" height="320">
               <h3 class="bestsellers-item-title">Spring Elegance</h3>
               <p class="text bestsellers-item-text">A delicate blend of peonies, tulips, and roses — perfect for
                 springtime gifting and bright smiles.</p>
@@ -102,7 +100,7 @@
             </li>
             <li class="bestsellers-item">
               <img src="./images/top-bouquet-2@X1.jpg" srcset="./images/top-bouquet-2@X2.jpg 2x" alt="Crimson Rose"
-                class="bestsellers-img">
+                class="bestsellers-img" width="400" height="320">
               <h3 class="bestsellers-item-title">Crimson Rose</h3>
               <p class="text bestsellers-item-text">A stylish composition of roses, seasonal greenery, and vibrant
                 berries — a bold and elegant floral statement.</p>
@@ -110,7 +108,7 @@
             </li>
             <li class="bestsellers-item">
               <img src="./images/top-bouquet-3@X1.jpg" srcset="./images/top-bouquet-3@X2.jpg 2x" alt="Sunny Bliss"
-                class="bestsellers-img">
+                class="bestsellers-img" width="400" height="320">
               <h3 class="bestsellers-item-title">Sunny Bliss</h3>
               <p class="text bestsellers-item-text">A rich bouquet with lavender, lisianthus, and roses — ideal for
                 those who love deep hues and gentle fragrance.</p>
@@ -127,11 +125,11 @@
               <li class="dot"></li>
             </ul>
             <div class="pagination-buttons">
-              <button class="slider-btn prev-btn" aria-label="Previous">
-                <img src="./icons/left-arrow-alt.svg" alt="" width="24" height="24">
+              <button type="button" class="slider-btn prev-btn" aria-label="Previous">
+                <svg width="24" height="24"><use href="./images/icons.svg#left-arrow-alt"></use></svg>
               </button>
-              <button class="slider-btn next-btn" aria-label="Next">
-                <img src="./icons/right-arrow-alt.svg" alt="" width="24" height="24">
+              <button type="button" class="slider-btn next-btn" aria-label="Next">
+                <svg width="24" height="24"><use href="./images/icons.svg#right-arrow-alt"></use></svg>
               </button>
             </div>
           </div>
@@ -233,11 +231,11 @@
             </li>
           </ul>
           <div class="feedback-pagination-buttons">
-            <button class="slider-btn prev-btn" aria-label="Previous">
-              <img src="./icons/left-arrow-alt.svg" alt="" width="24" height="24">
+            <button type="button" class="slider-btn prev-btn" aria-label="Previous">
+              <svg width="24" height="24"><use href="./images/icons.svg#left-arrow-alt"></use></svg>
             </button>
-            <button class="slider-btn next-btn" aria-label="Next">
-              <img src="./icons/right-arrow-alt.svg" alt="" width="24" height="24">
+            <button type="button" class="slider-btn next-btn" aria-label="Next">
+              <svg width="24" height="24"><use href="./images/icons.svg#right-arrow-alt"></use></svg>
             </button>
           </div>
         </div>
@@ -252,14 +250,14 @@
 
         <address class="contacts-list">
           <div class="contact-item">
-            <img src="./icons/phone.svg" alt="" width="24" height="24" class="contact-icon">
+            <svg width="24" height="24" class="contact-icon"><use href="./images/icons.svg#phone"></use></svg>
             <div class="contact-details">
               <p class="contact-label">Phone</p>
               <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
             </div>
           </div>
           <div class="contact-item">
-            <img src="./icons/map.svg" alt="" width="24" height="24" class="contact-icon">
+            <svg width="24" height="24" class="contact-icon"><use href="./images/icons.svg#map"></use></svg>
             <div class="contact-details">
               <p class="contact-label">Store</p>
               <p class="contact-text">456 Floral Ave, Sydney NSW 2000 AU</p>
@@ -267,7 +265,7 @@
           </div>
         </address>
         <img src="./images/contacts@X1.jpg" srcset="./images/contacts@X2.jpg 2x" alt="Florist table"
-          class="contacts-image">
+          class="contacts-image" width="700" height="396">
       </div>
     </section>
   </main>
@@ -275,7 +273,7 @@
   <footer class="footer-section">
     <div class="container">
       <a href="./index.html" class="footer-logo-link">
-        <img src="./icons/Logo.svg" alt="Flora Footer Logo" class="footer-logo">
+        <svg class="footer-logo" aria-label="Flora Footer Logo" viewBox="0 0 84 36"><use href="./images/icons.svg#Logo"></use></svg>
       </a>
       <ul class="footer-navigation-list">
         <li><a href="#about" class="general-link">About Us</a></li>
@@ -285,12 +283,9 @@
         <li><a href="#contacts" class="general-link">Contacts</a></li>
       </ul>
       <ul class="footer-socials">
-        <li><a href="https://facebook.com" class="general-link" target="_blank" rel="noopener noreferrer"><img
-              src="./icons/Facebook.svg" alt="Facebook" class="social-icon"></a></li>
-        <li><a href="https://instagram.com" class="general-link" target="_blank" rel="noopener noreferrer"><img
-              src="./icons/Instagram.svg" alt="Instagram" class="social-icon"></a></li>
-        <li><a href="https://twitter.com" class="general-link" target="_blank" rel="noopener noreferrer"><img
-              src="./icons/X.svg" alt="Twitter(X)" class="social-icon"></a></li>
+        <li><a href="https://facebook.com" class="general-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="social-icon"><use href="./images/icons.svg#Facebook"></use></svg></a></li>
+        <li><a href="https://instagram.com" class="general-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="social-icon"><use href="./images/icons.svg#Instagram"></use></svg></a></li>
+        <li><a href="https://twitter.com" class="general-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter(X)"><svg class="social-icon"><use href="./images/icons.svg#X"></use></svg></a></li>
       </ul>
       <hr class="footer-divider">
       <p class="footer-copyright">&copy; 2025 Flora. All rights reserved.</p>
@@ -298,7 +293,7 @@
   </footer>
 
   <a href="#" class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-    <img src="./icons/top-arrow-alt.svg" alt="" width="24" height="24">
+    <svg width="24" height="24"><use href="./images/icons.svg#top-arrow-alt"></use></svg>
   </a>
 
   <div class="mobile-menu" id="mobile-menu" data-menu>

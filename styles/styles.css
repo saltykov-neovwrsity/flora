@@ -903,6 +903,7 @@ body {
   }
 
   .footer-socials {
+    margin-left: 200px;
     grid-column: 3;
     grid-row: 1;
     margin-bottom: 0;

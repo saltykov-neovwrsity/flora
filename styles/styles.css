@@ -149,6 +149,18 @@ body {
   position: relative;
   z-index: 1;
   padding: 0;
+  background-color: var(--secondary-bg);
+  background-image: url('../images/hero@X1.jpg');
+  background-image: -webkit-image-set(url('../images/hero@X1.webp') 1x, url('../images/hero@X2.webp') 2x);
+  background-image: image-set(
+    url('../images/hero@X1.webp') type('image/webp') 1x,
+    url('../images/hero@X2.webp') type('image/webp') 2x,
+    url('../images/hero@X1.jpg') type('image/jpeg') 1x,
+    url('../images/hero@X2.jpg') type('image/jpeg') 2x
+  );
+  background-size: cover;
+  background-position: calc(50% - 30px) center;
+  background-repeat: no-repeat;
 }
 
 .hero-section .container {
@@ -156,22 +168,6 @@ body {
   flex-direction: column;
   align-items: flex-start;
   height: 100%;
-}
-
-.hero-image-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: calc(50% - 30px) center;
 }
 
 .hero-content {
@@ -873,8 +869,6 @@ body {
   }
 
   .hero-section {
-    max-width: 1440px;
-    margin: 0 auto;
     padding: 0;
   }
 
@@ -944,11 +938,6 @@ body {
 
   .contacts-image {
     height: 720px;
-  }
-
-  .footer-section {
-    max-width: 1440px;
-    margin: 0 auto;
   }
 
   .footer-section .container {

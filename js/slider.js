@@ -28,7 +28,8 @@ const setupSlider = (wrapperSelector, listSelector, prevSelector, nextSelector, 
     const maxScroll = list.scrollWidth - list.clientWidth;
 
     if (prevBtn) prevBtn.disabled = scrollPos <= 0;
-    if (nextBtn) nextBtn.disabled = scrollPos >= maxScroll - 1;
+    // Add a 5px tolerance to account for sub-pixel rendering and rounding
+    if (nextBtn) nextBtn.disabled = scrollPos >= maxScroll - 5;
   };
 
   const scrollToItem = (index) => {
@@ -82,6 +83,13 @@ const setupSlider = (wrapperSelector, listSelector, prevSelector, nextSelector, 
   }
 
   list.addEventListener('scroll', () => {
+    requestAnimationFrame(() => {
+      updateDots();
+      updateButtons();
+    });
+  });
+
+  window.addEventListener('resize', () => {
     requestAnimationFrame(() => {
       updateDots();
       updateButtons();

@@ -712,9 +712,7 @@ body {
     width: auto;
   }
 
-  .hero-image {
-    object-position: right center;
-  }
+
 
   .about-block {
     display: flex;
@@ -848,6 +846,13 @@ body {
 
 }
 
+/* Large Tablet / Pre-Desktop */
+@media screen and (min-width: 1380px) and (max-width: 1439px) {
+  .hero-section {
+    background-position: right center;
+  }
+}
+
 /* Desktop (1440px) */
 @media screen and (min-width: 1440px) {
 
@@ -870,6 +875,7 @@ body {
 
   .hero-section {
     padding: 0;
+    background-position: center;
   }
 
   .hero-section .container {

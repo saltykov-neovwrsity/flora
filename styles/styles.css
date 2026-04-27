@@ -30,8 +30,8 @@ body {
 }
 
 .container {
-  max-width: 1336px;
-  width: 100%;
+  box-sizing: border-box;
+  max-width: 375px;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -57,21 +57,29 @@ body {
   border-radius: 100px;
   border: none;
   font-family: var(--font-primary);
-  font-size: var(--size-text);
+  font-size: 16px;
   line-height: var(--lh-text);
   color: var(--primary-button-text);
   background: var(--primary-button-bg);
   padding: 8px 20px;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .primary-button:hover,
 .primary-button:focus-visible {
-  background: var(--primary-button-hover-bg);
+  opacity: 0.5;
 }
 
 .primary-button:active {
+  background: #4E544D;
+  color: #FFFFFF;
+  opacity: 1;
   transform: scale(0.98);
+}
+
+.primary-button:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
 }
 
 .general-link {
@@ -129,7 +137,7 @@ body {
 }
 
 .menu-button.is-open .menu-icon__close {
-  display: block;
+  display: inline;
 }
 
 .menu-button.is-open .menu-icon__burger {
@@ -141,9 +149,13 @@ body {
   position: relative;
   z-index: 1;
   padding: 0;
-  min-height: 510px;
+}
+
+.hero-section .container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
 }
 
 .hero-image-wrapper {
@@ -162,7 +174,14 @@ body {
   object-position: calc(50% - 30px) center;
 }
 
+.hero-content {
+  text-align: left;
+  padding: 48px 0;
+  width: 100%;
+}
+
 .hero-content .primary-button {
+  max-width: 334px;
   width: 100%;
   padding: 10px 24px;
 }
@@ -174,12 +193,12 @@ body {
   line-height: var(--lh-heading);
   letter-spacing: -0.01em;
   margin-bottom: 24px;
-  max-width: 75%;
+  max-width: 243px;
 }
 
 .hero-text {
   margin-bottom: 32px;
-  max-width: 75%;
+  max-width: 247px;
 }
 
 /* About Section */
@@ -308,12 +327,28 @@ body {
   background-color: transparent;
   border: 1px solid #D9D9D9;
   cursor: pointer;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--primary-text);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), background 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0;
 }
 
-.slider-btn:hover {
-  border-color: var(--primary-text);
+.slider-btn:disabled {
+  border-color: #F0F0F0;
+  color: #D3D3D3;
+  cursor: not-allowed;
+}
+
+.slider-btn:not(:disabled):hover,
+.slider-btn:not(:disabled):focus-visible {
+  background-color: rgba(66, 237, 19, 0.3);
+  border-color: transparent;
+  color: var(--primary-text);
+}
+
+.slider-btn:not(:disabled):active {
+  background: var(--primary-button-bg);
+  border-color: transparent;
+  color: var(--primary-text);
 }
 
 /* Catalog (Bouquets) */
@@ -560,15 +595,17 @@ body {
   right: 10px;
   width: 48px;
   height: 48px;
-  background: var(--primary-button-bg);
+  background-color: transparent;
+  border: 1px solid #D9D9D9;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--primary-text);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), background 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 99;
 }
 
@@ -577,10 +614,19 @@ body {
   visibility: visible;
 }
 
-.scroll-to-top:hover,
-.scroll-to-top:focus-visible {
-  background: var(--primary-button-hover-bg);
+.scroll-to-top.show:hover,
+.scroll-to-top.show:focus-visible {
+  background-color: rgba(66, 237, 19, 0.3);
+  border-color: transparent;
+  color: var(--primary-text);
   transform: translateY(-4px);
+}
+
+.scroll-to-top.show:active {
+  background: var(--primary-button-bg);
+  border-color: transparent;
+  color: var(--primary-text);
+  transform: translateY(0);
 }
 
 .scroll-to-top img {
@@ -599,7 +645,7 @@ body {
   height: 100vh;
   width: 100vw;
   z-index: 10;
-  padding: 96px 20px 24px;
+  padding: 96px 0 24px;
   overflow-y: auto;
   background-color: var(--primary-bg);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -609,9 +655,16 @@ body {
   transform: translateX(0);
 }
 
+.mobile-menu .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .menu-navigation-list {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 32px;
   font-size: 16px;
   margin-bottom: 24px;
@@ -625,6 +678,7 @@ body {
 @media screen and (min-width: 768px) {
 
   .container {
+    max-width: 768px;
     padding: 0 32px;
   }
 
@@ -638,9 +692,10 @@ body {
   }
 
   .hero-section .container {
-    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 32px;
+    padding-top: 104.5px;
   }
 
   .hero-content {
@@ -656,7 +711,6 @@ body {
   body.menu-open .header-button {
     display: none;
   }
-
 
   .hero-content .primary-button {
     width: auto;
@@ -788,12 +842,12 @@ body {
     height: 24px;
   }
 
-  .menu-navigation-list {
-    align-items: center;
-  }
-
   body.menu-open .header-button {
     display: none;
+  }
+
+  .menu-navigation-list {
+    align-items: center;
   }
 
 }
@@ -810,7 +864,8 @@ body {
   }
 
   .container {
-    padding: 0 28px;
+    max-width: 1440px;
+    padding: 0 80px;
   }
 
   .section-title {
@@ -825,6 +880,7 @@ body {
 
   .hero-section .container {
     gap: 64px;
+    padding-top: 110.5px;
   }
 
   .hero-section .hero-title {
@@ -836,6 +892,10 @@ body {
 
   .hero-section .hero-text {
     max-width: 667px;
+  }
+
+  .hero-section .hero-content {
+    padding: 80px 0;
   }
 
 
